@@ -1,7 +1,7 @@
 {
     "name": "redstonia",
-    "preductname": "redstonia Launcher",
-    "version": "0.1.6",
+    "preductname": "Redstonia",
+    "version": "2.1.7",
     "description": "Launcher officiel de Redstonia",
     "main": "src/app.js",
     "author": {
