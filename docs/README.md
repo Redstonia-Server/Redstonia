@@ -2,11 +2,7 @@
 
 <h1 align="center">Redstonia</h1>
 
-<p align="center">
-    <a href="http://discord.gg/M4bR9D4wcy">
-        <img src="https://invidget.switchblade.xyz/e9q7Yr2cuQ">
-    </a>
-</p>
+
 
 ---
 ### **<ins><p align="center">Conditions d'utilisation:</p>**
