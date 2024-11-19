@@ -274,7 +274,6 @@
 .instance-select {
     display: flex;
     align-items: center;
-    position: absolute;
     right: -3;
     top: -2;
     color: var(--element-color);
