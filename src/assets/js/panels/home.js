@@ -112,7 +112,7 @@ class Home {
         let instanceCloseBTN = document.querySelector('.close-popup')
 
         if (instancesList.length === 1) {
-            document.querySelector('.instance-select').style.display = '1'
+            document.querySelector('.instance-select').style.display = 'none'
             instanceBTN.style.paddingRight = '0'
         }
 
