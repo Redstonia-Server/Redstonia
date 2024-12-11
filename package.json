@@ -2,6 +2,7 @@
     "name": "redstonia",
     "preductname": "Redstonia",
     "version": "2.1.14",
+
     "description": "Launcher officiel de Redstonia",
     "main": "src/app.js",
     "author": {
