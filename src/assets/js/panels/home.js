@@ -15,6 +15,7 @@ class Home {
         this.news()
         this.socialLick()
         this.instancesSelect()
+        this.initBtn();
         document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
     }
 
@@ -195,6 +196,35 @@ class Home {
         })
 
         instanceCloseBTN.addEventListener('click', () => instancePopup.style.display = 'none')
+    }
+
+    initBtn() {
+
+        document.querySelector('.Discord').addEventListener('click', () => {
+            this.openlink('https://discord.gg/PAtesncvC6');
+        })
+        document.querySelector('.Twitter').addEventListener('click', () => {
+            this.openlink('https://x.com/RedstoniaC72633');
+        })
+        document.querySelector('.Tiktok').addEventListener('click', () => {
+            this.openlink('https://www.tiktok.com/@redstonia.officiel');
+        })
+        document.querySelector('.Youtube').addEventListener('click', () => {
+            this.openlink('https://www.youtube.com/@Redstonia_Officiel');
+        })
+        document.querySelector('.Instagram').addEventListener('click', () => {
+            this.openlink('https://www.instagram.com/redstonia_officiel/');
+        })
+        document.querySelector('.Twitch').addEventListener('click', () => {
+            this.openlink('https://www.twitch.tv/redstonia_officiel');
+        })
+        document.querySelector('.MyWebsite').addEventListener('click', () => {
+            this.openlink('https://redstonia.com/');
+        })
+    }
+
+    openlink(url) {
+        shell.openExternal(url);
     }
 
     async startGame() {
