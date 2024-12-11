@@ -1,45 +1,49 @@
-"use strict";
-const electron = require("electron");
+/**
+ * @author Luuxis
+ * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
+ */
+
+const { app, BrowserWindow, Menu } = require("electron");
 const path = require("path");
 const os = require("os");
 const pkg = require("../../../../package.json");
-let updateWindow = undefined;
+let dev = process.env.DEV_TOOL === 'open';
+let mainWindow = undefined;
 
 function getWindow() {
-    return updateWindow;
+    return mainWindow;
 }
 
 function destroyWindow() {
-    if (!updateWindow) return;
-    updateWindow.close();
-    updateWindow = undefined;
+    if (!mainWindow) return;
+    app.quit();
+    mainWindow = undefined;
 }
 
 function createWindow() {
     destroyWindow();
-    updateWindow = new electron.BrowserWindow({
+    mainWindow = new BrowserWindow({
         title: pkg.preductname,
-        width: 1400,
-        height: 815,
-        minWidth: 1034,
-        minHeight: 815,
+        width: 1280,
+        height: 720,
+        minWidth: 980,
+        minHeight: 552,
         resizable: true,
         icon: `./src/assets/images/icon.${os.platform() === "win32" ? "ico" : "png"}`,
-        transparent: false,
         frame: os.platform() !== 'win32',
         show: false,
         webPreferences: {
             contextIsolation: false,
-            nodeIntegration: true,
-            webviewTag: true,
+            nodeIntegration: true
         },
     });
-    electron.Menu.setApplicationMenu(null);
-    updateWindow.setMenuBarVisibility(false);
-    updateWindow.loadFile(path.join(electron.app.getAppPath(), 'src', 'launcher.html'));
-    updateWindow.once('ready-to-show', () => {
-        if (updateWindow) {
-            updateWindow.show();
+    Menu.setApplicationMenu(null);
+    mainWindow.setMenuBarVisibility(false);
+    mainWindow.loadFile(path.join(`${app.getAppPath()}/src/launcher.html`));
+    mainWindow.once('ready-to-show', () => {
+        if (mainWindow) {
+            if (dev) mainWindow.webContents.openDevTools({ mode: 'detach' })
+            mainWindow.show()
         }
     });
 }
