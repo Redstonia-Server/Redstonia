@@ -1,7 +1,12 @@
 .settings .container {
     display: flex;
     height: 100%;
+    overflow: hidden;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+    }
 
 .nav-settings {
     width: 20%;
@@ -12,6 +17,8 @@
     flex-direction: column;
     justify-content: center;
     font-size: 2.5rem;
+    position: fixed ;
+
 }
 
 .nav-settings p {
@@ -103,6 +110,20 @@
 
 .content-evenly {
     justify-content: space-evenly;
+}
+
+.logoRed-settings img {
+    margin-top: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+
+.logoRed-settings {
+    width: 100%;
+    
 }
 
 /*******************************************************************************
